@@ -1,0 +1,683 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects | Amaan Mansuri</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Complete portfolio of projects by Amaan Mansuri - Data Scientist & ML Engineer." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+    /* Project categories styling */
+    .project-categories {
+        margin-bottom: 3em;
+        text-align: center;
+    }
+    
+    .category-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        margin-bottom: 2em;
+    }
+    
+    .category-nav a {
+        padding: 0.5em 1.5em;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        text-decoration: none;
+        color: var(--COLOR7);
+        transition: all 0.3s ease;
+    }
+    
+    .category-nav a:hover,
+    .category-nav a.active {
+        background: var(--COLOR4);
+        color: var(--COLOR6);
+        border-color: var(--COLOR4);
+    }
+    
+    .project-section {
+        margin-bottom: 4em;
+    }
+    
+    .project-section h3 {
+        color: var(--COLOR4);
+        font-size: 1.5em;
+        margin-bottom: 2em;
+        text-align: center;
+        position: relative;
+    }
+    
+    .project-section h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 2px;
+        background: var(--COLOR4);
+    }
+    
+    /* Project cards styling to match index.html */
+    .project-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em 0; /* Reduced from 1.5em to match index.html */
+    }
+    
+    .project-content h4 {
+        margin-bottom: 0.5em; /* Reduced from 1em to match index.html */
+        flex-shrink: 0;
+        text-align: center; /* Center-align project titles to match index.html */
+    }
+    
+    .project-content p:not(.tags) {
+        flex-grow: 1;
+        margin-bottom: 1.5em;
+    }
+    
+    .project-content .tags {
+        margin-top: auto;
+        margin-bottom: 0;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    
+    .tags span {
+        display: inline-block;
+        margin: .15em .35em .15em 0;
+        padding: .25em .65em;
+        font-size: .7rem;
+        border: 1px solid var(--COLOR4);
+        border-radius: 3px;
+        opacity: 0.75;
+        white-space: nowrap;
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        background: transparent; /* Start with transparent background */
+    }
+    
+    /* Hover effects for tag pills */
+    .tags span:hover {
+        background: rgba(255, 255, 255, 0.1); /* Subtle background color */
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Glow effect */
+        opacity: 1; /* Full opacity on hover */
+        transform: translateY(-1px); /* Slight lift effect */
+    }
+    
+    article {
+        display: flex !important;
+        flex-direction: column;
+        height: 100%;
+        min-height: 500px;
+    }
+    
+    article .image.fit {
+        height: 200px; /* Match exactly with index.html */
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    
+    article .image.fit img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain; /* Changed from 'cover' to 'contain' to show entire image */
+        padding: 10px; /* Add margin around the image */
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.08) 100%); /* Enhanced gradient background */
+        border-radius: 8px; /* Rounded corners for better aesthetics */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+    
+    /* Hover effect for project images */
+    article .image.fit img:hover {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.2) 100%) !important; /* Much brighter gradient on hover */
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.4) !important; /* Stronger glow effect */
+        transform: translateY(-3px) !important; /* More lift effect */
+        border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle border highlight */
+    }
+    
+    article ul.actions {
+        margin-top: 1.5em;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    /* Increase spacing between project rows */
+    .row.gtr-50.gtr-uniform {
+        margin-bottom: 4em !important; /* Increased from default 2.5em */
+    }
+    
+    /* Center specific rows with fewer than 3 projects */
+    /* NLP section - center all rows (currently 2 projects) */
+    #nlp .row.gtr-50.gtr-uniform {
+        justify-content: center;
+    }
+    
+    /* Computer Vision section - center all rows (currently 1 project) */
+    #cv .row.gtr-50.gtr-uniform {
+        justify-content: center;
+    }
+    
+    /* Data Analysis section - center only the second row (2 projects) */
+    #analysis .row.gtr-50.gtr-uniform:nth-of-type(2) {
+        justify-content: center;
+    }
+    
+    /* Ensure proper spacing for all centered cards */
+    #nlp .row.gtr-50.gtr-uniform article,
+    #cv .row.gtr-50.gtr-uniform article,
+    #analysis .row.gtr-50.gtr-uniform:nth-of-type(2) article {
+        margin: 0 1em;
+    }
+    
+    @media screen and (max-width: 736px) {
+        .category-nav {
+            flex-direction: column;
+            gap: 1em;
+        }
+        
+        .category-nav a {
+            text-align: center;
+        }
+        
+        article {
+            min-height: 400px;
+        }
+
+        .row.gtr-50.gtr-uniform {
+            margin-bottom: 3em !important; /* Reduced spacing on mobile */
+        }
+    }
+    
+    /* Mobile responsive image sizing to match index.html */
+    @media (max-width: 750px) {
+        article .image.fit {
+            height: 180px; /* Match index.html mobile image height */
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        article {
+            min-height: 350px;
+        }
+    }
+    
+    /* Scroll margin for category navigation targets - removed since we handle offset with JavaScript */
+    /* #nlp-title, #cv-title, #analysis-title {
+        scroll-margin-top: 120px;
+    } */
+    
+    /* Scroll to Top Button */
+    .scroll-to-top-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .scroll-to-top-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .scroll-to-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Mobile responsive */
+    @media screen and (max-width: 736px) {
+        .scroll-to-top-btn {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            font-size: 1rem;
+        }
+    }
+    
+    /* Disappearing header styles */
+    #header {
+        transition: transform 0.3s ease;
+    }
+    
+    #header.header-hidden {
+        transform: translateY(-100%);
+    }
+    
+    /* Adjust main content padding when header is hidden */
+    #main {
+        transition: padding-top 0.3s ease;
+    }
+    
+    #main.main-adjusted {
+        padding-top: 20px;
+    }
+</style>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Amaan Mansuri</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html#about">About</a></li>
+						<li><a href="index.html#project" class="active">Projects</a></li>
+						<li><a href="https://www.linkedin.com/in/amaanmansuri/" target="_blank">LinkedIn</a></li>
+						<li><a href="assets/Resume_AmaanMansuri.pdf" target="_blank" class="button primary">Resume</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<div id="main" class="wrapper style1" style="padding-top: 20px;">
+				<div class="container">
+					<header class="major" style="margin: 20px;">
+						<h2>All Projects</h2>
+						<p style="margin: 0; padding: 0;">A comprehensive showcase of my work across different domains</p>
+					</header>
+
+					<!-- Category Navigation -->
+					<div class="project-categories">
+						<div class="category-nav">
+							<a href="#analysis-title" class="active">Data Analysis</a>
+							<a href="#nlp-title">Natural Language Processing</a>
+							<a href="#cv-title">Computer Vision</a>
+						</div>
+					</div>
+
+					<!-- Data Analysis Projects -->
+					<section id="analysis" class="project-section">
+    <h3 id="analysis-title">Data Analysis</h3>
+    <!-- 
+        HOW TO ADD MORE PROJECTS:
+        1. To add more projects, simply copy and paste the entire <div class="row gtr-50 gtr-uniform"> ... </div> block
+        2. Place it directly below the existing row
+        3. Replace the content inside each <article> with your new project details
+        4. Each row contains 2 projects (col-4), so add as many rows as needed
+    -->
+    <div class="row gtr-50 gtr-uniform">
+        
+        <!-- MovieLens Recommender -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/movielens.png" alt="MovieLens Recommender System" />
+            </span>
+            <div class="project-content">
+                <h4>MovieLens Recommender</h4>
+                <p>Scalable recommender with MinHash user pairing and implicit ALS; Spark-powered pipeline achieved NDCG@100 of 0.19 across 30M+ interactions.</p>
+                <p class="tags">
+                    <span>PySpark</span>
+                    <span>ALS</span>
+                    <span>MinHash</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/movielens-recommender" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+        <!-- Professor Rating Analysis -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/professor.png" alt="Professor Rating Analysis Dashboard" />
+            </span>
+            <div class="project-content">
+                <h4>What Makes Good Profs?</h4>
+                <p>Investigated gender biases and predictors of professor ratings using statistical testing, regression, and classification on RateMyProfessors data.</p>
+                <p class="tags">
+                    <span>PySpark</span>
+                    <span>Hypothesis Testing</span>
+                    <span>Statistics</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/good-profs" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+        <!-- Amazon Book Analysis -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/book.png" alt="Amazon Book Data Analysis Dashboard" />
+            </span>
+            <div class="project-content">
+                <h4>Amazon Book Data Analysis</h4>
+                <p>Built models to maximize book sale profits and uncover psychological patterns in customer purchasing behavior using enriched Amazon metadata.</p>
+                <p class="tags">
+                    <span>Web Scraping</span>
+                    <span>SQL</span>
+                    <span>Analytics</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/amazon-book" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+    </div>
+
+    <div class="row gtr-50 gtr-uniform">
+        <!-- SoccerScout Recommender -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/soccer.png" alt="SoccerScout Player Recommender System" />
+            </span>
+            <div class="project-content">
+                <h4>SoccerScout: Smart Player Recommender</h4>
+                <p>Built a nested clustering-based recommender for e-sports players, improving search relevance by 40% over baseline filtering.</p>
+                <p class="tags">
+                    <span>Clustering</span>
+                    <span>EDA</span>
+                    <span>Machine Learning</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/Smart-Player-Recommendation-System" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+        <!-- Stock Pattern Analysis -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/stock.png" alt="Stock Pattern Analysis Dashboard" />
+            </span>
+            <div class="project-content">
+                <h4>Stock Pattern Analysis</h4>
+                <p>Engineered a pattern detector using Spearman rank correlation, reducing runtime by 90% vs CNNs; won 1st place among competing teams.</p>
+                <p class="tags">
+                    <span>Spearman</span>
+                    <span>EDA</span>
+                    <span>Optimization</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/Stock-Pattern-Analysis" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+    </div>
+        
+        
+
+    </div>
+</section>
+
+					<!-- NLP Projects -->
+					<section id="nlp" class="project-section">
+    <h3 id="nlp-title">Natural Language Processing</h3>
+    <!-- 
+        HOW TO ADD MORE PROJECTS:
+        1. To add more projects, simply copy and paste the entire <div class="row gtr-50 gtr-uniform"> ... </div> block
+        2. Place it directly below the existing row
+        3. Replace the content inside each <article> with your new project details
+        4. Each row contains 2 projects (col-4), so add as many rows as needed
+    -->
+    <div class="row gtr-50 gtr-uniform">
+        
+        <!-- Stock Forecast -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/stock-forecast.png" alt="Multi-Horizon Stock Forecast Dashboard" />
+            </span>
+            <div class="project-content">
+                <h4>Multi-Horizon Stock Forecast</h4>
+                <p>LSTM-based time series model that incorporates real-time sentiment from financial news; cyclical LR and callbacks reduce MAE by 18%.</p>
+                <p class="tags">
+                    <span>Sentiment Analysis</span> 
+                    <span>Python Optimization</span> 
+                    <span>Time Series</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/Stocker" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+        <!-- AI Voice Therapist -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/voice-therapist.png" alt="AI Voice Therapist System" />
+            </span>
+            <div class="project-content">
+                <h4>AI Voice Therapist</h4>
+                <p>Self-improving AI therapist powered by LLMs and ElevenLabs; adapts responses via dynamic prompt tuning from conversation cues and feedback.</p>
+                <p class="tags">
+                    <span>Voice Generation</span>
+                    <span>LLM Guardrails</span>
+                    <span>Speech Recognition</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="https://github.com/Amaan165/AI-Voice-Therapist" class="button">View GitHub</a></li>
+            </ul>
+        </article>
+
+    </div>
+</section>
+
+					<!-- Computer Vision Projects -->
+					<section id="cv" class="project-section">
+    <h3 id="cv-title">Computer Vision</h3>
+    <!-- 
+        HOW TO ADD MORE PROJECTS:
+        1. To add more projects, simply copy and paste the entire <div class="row gtr-50 gtr-uniform"> ... </div> block
+        2. Place it directly below the existing row
+        3. Replace the content inside each <article> with your new project details
+        4. Each row contains 2 projects (col-4), so add as many rows as needed
+    -->
+    <div class="row gtr-50 gtr-uniform">
+        
+        <!-- Multi-Lingual Digit Classification -->
+        <article class="col-4 col-12-medium">
+            <span class="image fit">
+                <img src="images/digit.png" alt="Multi-Lingual Digit Classification System" />
+            </span>
+            <div class="project-content">
+                <h4>Multi-Lingual Digit Classification</h4>
+                <p>Deep learning pipeline for recognizing handwritten digits across Devanagari, Arabic, and Latin scripts. Trained CNNs using transfer learning and augmentation.</p>
+                <p class="tags">
+                    <span>Image Classification</span>
+                    <span>Transfer Learning</span>
+                    <span>CNN</span>
+                </p>
+            </div>
+            <ul class="actions">
+                <li><a href="assets/Digit_Classification_Paper.pdf" target="_blank" class="button">View Paper</a></li>
+            </ul>
+        </article>
+
+				</div>
+			</div>
+
+			<!-- Contact Section -->
+			<section id="contact" class="wrapper style2 special fade">
+				<div class="container">
+					<header>
+						<h2>Let's Connect</h2>
+						<p>Interested in collaborating? Let's discuss your next project!</p>
+					</header>
+
+					<form method="POST" action="https://formspree.io/f/manjerpj" class="cta">
+						<div class="row gtr-uniform gtr-50">
+							<div class="col-6 col-12-small">
+								<input type="text" name="name" id="name" placeholder="Your Name" required />
+							</div>
+							<div class="col-6 col-12-small">
+								<input type="email" name="email" id="email" placeholder="Your Email" required />
+							</div>
+							<div class="col-12">
+								<textarea name="message" id="message" placeholder="Your message..." rows="4"></textarea>
+							</div>
+							<div class="col-12">
+								<input type="submit" value="Send Message" class="fit primary" />
+							</div>
+						</div>
+					</form>
+
+					<div class="social-icons-container">
+						<ul class="icons">
+							<li><a href="https://github.com/amaan" class="icon brands alt fa-github"></a></li>
+							<li><a href="https://linkedin.com/in/amaan" class="icon brands alt fa-linkedin-in"></a></li>
+							<li><a href="mailto:amaan.m@example.com" class="icon solid alt fa-envelope"></a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<p class="copyright">&copy; 2025 Amaan Mansuri. All rights reserved.</p>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Scroll to Top Button -->
+		<button id="scrollToTop" class="scroll-to-top-btn" title="Scroll to top">
+			<i class="fas fa-chevron-up"></i>
+		</button>
+
+
+
+		<!-- Override scroll speed -->
+		<script>
+			// Override the default scroll speed from main.js
+			$(document).ready(function() {
+				$('.scrolly').scrolly({
+					speed: 800  // Faster scroll speed (reduced from 2000)
+				});
+			});
+		</script>
+
+		<!-- Disappearing header and category navigation -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const header = document.getElementById('header');
+				const main = document.getElementById('main');
+				let lastScrollTop = 0;
+				let scrollThreshold = 100; // Minimum scroll before header starts hiding
+				
+				// Disappearing header functionality
+				window.addEventListener('scroll', function() {
+					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+					
+					// Only start hiding header after scrolling past threshold
+					if (scrollTop > scrollThreshold) {
+						if (scrollTop > lastScrollTop) {
+							// Scrolling down - hide header
+							header.classList.add('header-hidden');
+							main.classList.add('main-adjusted');
+						} else {
+							// Scrolling up - show header
+							header.classList.remove('header-hidden');
+							main.classList.remove('main-adjusted');
+						}
+					} else {
+						// Near top - always show header
+						header.classList.remove('header-hidden');
+						main.classList.remove('main-adjusted');
+					}
+					
+					lastScrollTop = scrollTop;
+				});
+				
+				// Category navigation with disappearing header
+				const categoryLinks = document.querySelectorAll('.category-nav a');
+				
+				categoryLinks.forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						
+						// Remove active class from all links
+						categoryLinks.forEach(l => l.classList.remove('active'));
+						// Add active class to clicked link
+						this.classList.add('active');
+						
+						// Get the target element
+						const targetId = this.getAttribute('href').substring(1);
+						const targetElement = document.getElementById(targetId);
+						
+						if (targetElement) {
+							// Hide header when navigating to sections
+							header.classList.add('header-hidden');
+							main.classList.add('main-adjusted');
+							
+							// Calculate position with extra 20px offset
+							const targetPosition = targetElement.offsetTop - 20;
+							
+							// Smooth scroll to the calculated position
+							window.scrollTo({
+								top: targetPosition,
+								behavior: 'smooth'
+							});
+							
+							// Don't auto-show header - let scroll behavior control it
+						}
+					});
+				});
+			});
+		</script>
+
+		<!-- Scroll to Top Functionality -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const scrollToTopBtn = document.getElementById('scrollToTop');
+				
+				// Show button when user scrolls down 300px
+				window.addEventListener('scroll', function() {
+					if (window.pageYOffset > 300) {
+						scrollToTopBtn.classList.add('show');
+					} else {
+						scrollToTopBtn.classList.remove('show');
+					}
+				});
+				
+				// Smooth scroll to top when button is clicked
+				scrollToTopBtn.addEventListener('click', function() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

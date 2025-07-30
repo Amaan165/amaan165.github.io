@@ -1,0 +1,497 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Amaan Mansuri | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Portfolio and project showcase of Amaan Mansuri - Data Scientist & ML Engineer." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		/* Disappearing header styles */
+		#header {
+			transition: transform 0.3s ease;
+		}
+		
+		#header.header-hidden {
+			transform: translateY(-100%);
+		}
+		
+		/* Adjust page wrapper padding when header is hidden */
+		#page-wrapper {
+			transition: padding-top 0.3s ease;
+		}
+		
+		#page-wrapper.main-adjusted {
+			padding-top: 20px;
+		}
+		</style>
+	</head>
+
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+	// target every Formspree form on the page (index & projects each have one)
+	document.querySelectorAll('form[action*="formspree.io/f/manjerpj"]')
+		.forEach(form => {
+
+		form.addEventListener('submit', async e => {
+			e.preventDefault();                        // ⛔ stop normal nav
+
+			try {
+			const res = await fetch(form.action, {
+				method: 'POST',
+				headers: { 'Accept': 'application/json' },
+				body: new FormData(form)
+			});
+
+			if (res.ok) {
+				alert("Thanks for the email, I'll be in touch promptly.");
+				form.reset();
+			} else {
+				alert("Sorry - something went wrong. Please try again later.");
+			}
+
+			} catch(err) {
+			alert("Network error - please check your connection and try again.");
+			}
+		});
+
+		});
+
+	});
+	</script>
+
+
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="https://github.com/Amaan165" target="_blank">Amaan Mansuri</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="#about">About</a></li>
+							<li><a href="#project">Projects</a></li>
+							<li><a href="https://www.linkedin.com/in/amaanmansuri/" target="_blank">LinkedIn</a></li>
+							<li><a href="assets/Resume_AmaanMansuri.pdf" target="_blank" class="button primary">Resume</a></li>
+						</ul>
+					  </nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+					<span class="image"><img src="images/pfp.png" alt="Amaan Mansuri - Data Scientist & ML Engineer" /></span>
+					<header>
+						<h2>Hi there, I'm Amaan!</h2>
+						<p class="typewriter">Excited to share my knowledge with others!</p>
+					</header>
+				</div>
+					<a href="#about" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- About -->
+			<section id="about" class="spotlight style1 bottom" label="Education & Experience">
+				<!-- 20 % hero strip -->
+				<span class="image fit main">
+				<img src="images/img1.jpg" alt="Washington Square Park, NYU">
+				</span>
+			
+				<!-- 80 % content -->
+				<div class="content">
+				<div class="container">
+					<div class="row gtr-50">
+			
+					<!-- Education -->
+					<div class="col-6 col-12-medium">
+						<h2>Education</h2>
+						<ul class="alt">
+						<li>
+							<strong>New York University — Center for Data Science</strong><br>
+							<em>Master of Science in Data Science</em><br>
+							<span class="small">New York, USA · <i>Expected May 2026</i></span>
+						</li>
+						<li>
+							<strong>Nirma University — Institute of Technology</strong><br>
+							<em>BTech in Computer Science & Engineering</em><br>
+							<span class="small">Ahmedabad, India · Sept 2020   Jun 2024</span>
+						</li>
+						</ul>
+					</div>
+			
+					<!-- Experience -->
+					<div class="col-6 col-12-medium">
+						<h2>Experience</h2>
+						<ul class="alt">
+						<li>
+							<strong>Research Assistant</strong><br>
+							<em>Hartley Lab, Department of Psychology, NYU</em><br>
+							<span class="small">Mar 2025 - Present · New York</span>
+						</li>
+						<li>
+							<strong>Research & Development Intern</strong><br>
+							<em>Johnson Controls-Hitachi</em><br>
+							<span class="small">Jan 2024 - Jun 2024 · Kadi</span>
+						</li>
+						<li>
+							<strong>Research Assistant</strong><br>
+							<em>CoE in Data Science, Nirma University</em><br>
+							<span class="small">May 2023 - Jul 2023 · Ahmedabad</span>
+						</li>
+						</ul>
+					</div>
+			
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+				</div><!-- /.content -->
+			
+				<a href="#project" class="goto-next scrolly">Next</a>
+			</section>
+  
+  
+
+			<!-- Projects -->
+			<section id="project" class="wrapper style1 fade-up">
+				<div class="container">
+				<!-- Section header -->
+				<header class="major">
+					<h2>Featured Projects</h2>
+				</header>
+
+				<!-- 3-column grid -->
+				<div class="row gtr-50 gtr-uniform">
+
+					<!-- Project A -->
+					<article class="col-4 col-12-medium">
+					<span class="image fit">
+						<img src="images/stress-test.png" alt="CCAR Stress Test Framework Dashboard" />
+					</span>
+					<div class="project-content">
+						<h3>CCAR Stress Test Framework</h3>
+						<p>Built a macroeconomic stress testing framework using historical FRED data to simulate capital adequacy under baseline and adverse conditions.</p>
+
+						<!-- tech tags -->
+						<p class="tags">
+							<span>Pandas</span>
+							<span>FRED API</span>
+							<span>Finance</span>
+						</p>
+					</div>
+
+					<ul class="actions">
+						<li>
+						<a href="https://github.com/Amaan165/ccar-stress-test"
+							class="button">View GitHub</a>
+						</li>
+					</ul>
+					</article>
+
+					<!-- Project B -->
+					<article class="col-4 col-12-medium">
+					<span class="image fit">
+						<img src="images/flight-delay.png" alt="Flight Delay Monitoring Dashboard" style="padding: 0"/>
+					</span>
+					<div class="project-content">
+						<h3>Flight Delay Monitoring</h3>
+						<p>Real-time flight delay and weather tracker using FAA and NOAA APIs; forecasts delays using historical patterns and live updates.</p>
+
+						<p class="tags">
+							<span>FAA API</span>
+							<span>NOAA</span>
+							<span>Flask</span>
+							<span>Data Engineering</span>
+						</p>
+					</div>
+
+					<ul class="actions">
+						<li><a href="https://github.com/Amaan165/flight-wx"
+							class="button">View GitHub</a></li>
+					</ul>
+					</article>
+
+					<!-- Project C -->
+					<article class="col-4 col-12-medium">
+					<span class="image fit">
+						<img src="images/humor.png" alt="Humor Detection and Generation System" />
+					</span>
+					<div class="project-content">
+						<h3>Humor Detection + Generation</h3>
+						<p>Two-stage NLP pipeline: RoBERTa & NLP detects humor, and an instruction-tuned LLM rewrites non-humorous text into a humorous version.</p>
+
+						<p class="tags">
+							<span>RoBERTa</span>
+							<span>Transformers</span>
+							<span>LLMs</span>
+						</p>
+					</div>
+
+					<ul class="actions">
+						<li><a href="https://github.com/Amaan165/Humour-Detection"
+							class="button">View GitHub</a></li>
+					</ul>
+					</article>
+
+				</div><!-- /.row -->
+				
+				<!-- View All Projects Button -->
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="projects.html" class="button primary">View All Projects</a></li>
+					</ul>
+				</footer>
+				
+				</div><!-- /.container -->
+
+				<!-- <a href="#three" class="goto-next scrolly">Next</a> -->
+			</section>
+  
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 special fade-up">
+				<div class="container">
+
+				<header class="major">
+					<h2>Technical Skills</h2>
+				</header>
+
+				<div class="row gtr-50">
+					
+					<!-- Programming Languages -->
+					<div class="col-6 col-12-medium">
+						<div class="box">
+							<div class="skill-header">
+								<span class="icon solid major fa-code"></span>
+								<h3>Programming Languages</h3>
+							</div>
+							<p class="skill-text">Python • SQL • Java • C++ • JavaScript • R • Bash</p>
+						</div>
+					</div>
+
+					<!-- Machine Learning & AI -->
+					<div class="col-6 col-12-medium">
+						<div class="box">
+							<div class="skill-header">
+								<span class="icon solid major fa-brain"></span>
+								<h3>Machine Learning & AI</h3>
+							</div>
+							<p class="skill-text">TensorFlow • PyTorch • scikit-learn • Keras • XGBoost • Transformers • spaCy • LangChain • Hugging Face</p>
+						</div>
+					</div>
+
+					<!-- Data Processing & Analytics -->
+					<div class="col-6 col-12-medium">
+						<div class="box">
+							<div class="skill-header">
+								<span class="icon solid major fa-chart-bar"></span>
+								<h3>Data Processing & Analytics</h3>
+							</div>
+							<p class="skill-text">NumPy • Pandas • Spark • Dask • Matplotlib • Seaborn • Plotly • Tableau • Power BI</p>
+						</div>
+					</div>
+
+					<!-- Cloud & DevOps -->
+					<div class="col-6 col-12-medium">
+						<div class="box">
+							<div class="skill-header">
+								<span class="icon solid major fa-cloud"></span>
+								<h3>Cloud & DevOps</h3>
+							</div>
+							<p class="skill-text">AWS • Docker • Kubernetes • Airflow • MLflow • TensorBoard • Git • Unix/Linux</p>
+						</div>
+					</div>
+
+				</div><!-- /.row -->
+
+				<footer class="major">
+					<ul class="actions special">
+					<li><a href="assets/Resume_AmaanMansuri.pdf" class="button primary">Download Resume</a></li>
+					</ul>
+				</footer>
+
+				</div><!-- /.container -->
+
+				<a href="#five" class="goto-next scrolly">Next</a>
+			</section>
+			  
+
+			<!-- Five -->
+			<section id="five" class="wrapper style special fade">
+				<div class="container">
+
+				<!-- Headline -->
+				<header>
+					<h2>Let's Connect</h2>
+					<p>Feel free to reach out for opportunities or collaborations. <br>I'm always excited to work on new and challenging projects!</p>
+				</header>
+
+				<!-- Contact form -->
+				<form id="contactForm" class="cta" method="POST" action="https://formspree.io/f/manjerpj">
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-small">
+					<input type="text"  name="name"     placeholder="Your Name"   required />
+					</div>
+
+					<div class="col-6 col-12-small">
+					<input type="email" name="email"    placeholder="Your Email"  required />
+					</div>
+
+					<div class="col-12">
+					<textarea name="message" placeholder="Your message…" rows="4" required></textarea>
+					</div>
+
+					<!--  spam-trap + no-redirect flags  -->
+					<input type="text"   name="_gotcha"  style="display:none">
+					<input type="hidden" name="_redirect" value="false">
+
+					<div class="col-12">
+					<input type="submit" value="Send Message" class="fit primary" />
+					</div>
+				</div>
+				</form>
+
+
+				<!-- Social icons - centered -->
+				<div class="social-icons-container">
+					<ul class="icons">
+						<li><a href="https://github.com/amaan"
+							class="icon brands alt fa-github"></a></li>
+						<li><a href="https://linkedin.com/in/amaan"
+							class="icon brands alt fa-linkedin-in"></a></li>
+						<li><a href="mailto:amaan.m@example.com"
+							class="icon solid alt fa-envelope"></a></li>
+					</ul>
+				</div>
+
+				</div><!-- /.container -->
+			</section>
+  
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<p class="copyright">&copy; 2025 Amaan Mansuri. All rights reserved.</p>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Scroll to Top Button -->
+			<button id="scrollToTop" class="scroll-to-top-btn" title="Scroll to top">
+				<i class="fas fa-chevron-up"></i>
+			</button>
+
+			<!-- Typewriter Effect Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const typewriterElement = document.querySelector('.typewriter');
+    const texts = [
+        'Excited to share my knowledge with others!',
+        'Transforming ideas into scalable solutions.',
+        'Always ready to learn and grow!',
+        'Data Science Student @ New York University',
+        'Building Intelligent AI systems.',
+        'Passionate about Machine Learning and Data Science.'
+    ];
+    
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeWriter() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        let typeSpeed = isDeleting ? 40 : 60;
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typeSpeed = 400; // Pause before next text
+        }
+        
+        setTimeout(typeWriter, typeSpeed);
+    }
+    
+    // Start typewriter effect after a short delay
+    setTimeout(typeWriter, 1000);
+});
+</script>
+
+<!-- Disappearing header and scroll to top functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const pageWrapper = document.getElementById('page-wrapper');
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    let lastScrollTop = 0;
+    let scrollThreshold = 100; // Minimum scroll before header starts hiding
+    
+    // Disappearing header functionality
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Only start hiding header after scrolling past threshold
+        if (scrollTop > scrollThreshold) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide header
+                header.classList.add('header-hidden');
+                pageWrapper.classList.add('main-adjusted');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('header-hidden');
+                pageWrapper.classList.remove('main-adjusted');
+            }
+        } else {
+            // Near top - always show header
+            header.classList.remove('header-hidden');
+            pageWrapper.classList.remove('main-adjusted');
+        }
+        
+        lastScrollTop = scrollTop;
+        
+        // Show/hide scroll to top button based on scroll position
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Smooth scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+	</body>
+</html>
