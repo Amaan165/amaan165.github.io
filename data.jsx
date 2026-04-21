@@ -107,7 +107,7 @@ const PROJECTS = [
     ],
     figure: "gepa-figure",
     links: [
-      { label: "GitHub", href: "https://github.com/Amaan165" },
+      { label: "GitHub", href: "https://github.com/Amaan165/gepa-fact-check-and-code-generation" },
       { label: "Blog", href: "#writing" },
     ],
     featured: true,
@@ -124,7 +124,7 @@ const PROJECTS = [
       { v: "60+", l: "YOLOv11 experiments" },
     ],
     figure: "fish-figure",
-    links: [{ label: "Case study", href: "#" }],
+    links: [{ label: "Case study", href: "https://www.undp.org/barbados/blog/unlocking-ocean-innovation" }],
     featured: false,
   },
   {
@@ -139,7 +139,7 @@ const PROJECTS = [
       { v: "3×", l: "ingestion speedup" },
     ],
     figure: "flight-figure",
-    links: [{ label: "GitHub", href: "https://github.com/Amaan165" }],
+    links: [{ label: "GitHub", href: "https://github.com/Amaan165/flight-wx" }],
     featured: false,
   },
 ];
@@ -149,13 +149,13 @@ const PUBLICATIONS = [
     year: "2024",
     title: "Multilingual Handwritten Digit Recognition Using Multiplexer-Based Deep Learning Models",
     venue: "IEEE · 15th ICCCNT",
-    href: "https://ieeexplore.ieee.org/document/10725046",
+    href: "https://ieeexplore.ieee.org/abstract/document/10726018",
   },
   {
     year: "2024",
     title: "High-Precision Estimation of DES Density and Viscosity using XGBoost: Experimental Insights and Modelling",
     venue: "Springer · Journal of Solution Chemistry",
-    href: "https://link.springer.com/article/10.1007/s10953-024-01403-6",
+    href: "https://link.springer.com/article/10.1007/s10953-025-01491-y",
   },
 ];
 
