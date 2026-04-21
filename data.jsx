@@ -108,7 +108,7 @@ const PROJECTS = [
     figure: "gepa-figure",
     links: [
       { label: "GitHub", href: "https://github.com/Amaan165/gepa-fact-check-and-code-generation" },
-      { label: "Blog", href: "#writing" },
+      { label: "Blog", href: "https://cliff-candytuft-70c.notion.site/Improving-Reliability-of-LLMs-using-GEPA-for-Fact-Checking-and-Code-Generation-2c4f02252fe1805a9ca2e8502d19dce2" },
     ],
     featured: true,
   },
