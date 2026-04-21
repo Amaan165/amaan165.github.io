@@ -314,7 +314,7 @@ function Contact() {
   return (
     <section className="section" id="contact" data-screen-label="Contact">
       <div className="section-rail">
-        <span className="num-big">08</span>
+        <span className="num-big">07</span>
         Contact
       </div>
       <div>
